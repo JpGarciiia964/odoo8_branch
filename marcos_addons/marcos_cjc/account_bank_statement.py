@@ -161,19 +161,9 @@ class account_cash_statement(orm.Model):
                     cjc_journal = line.journal_id.id
                     inv_journal = line.invoice_id.journal_id.id
                     move_line_ids = []
-                    move_line_ids += self.pool.get("account.move.line").search(cr, uid, [('ref', '=', number),
-                                                                                        ('account_id', '=', account_id),
-                                                                                        ('partner_id', '=', partner_id),
-                                                                                        ('journal_id', '=', cjc_journal),
-                                                                                        ('debit', '>', 0)
-                                                                                        ])
-                    move_line_ids += self.pool.get("account.move.line").search(cr, uid, [('ref', '=', number),
-                                                                                        ('account_id', '=', account_id),
-                                                                                        ('partner_id', '=', partner_id),
-                                                                                        ('journal_id', '=', inv_journal),
-                                                                                        ('credit', '>', 0)
-                                                                                        ])
 
+                    move_line_ids += self.pool.get("account.move.line").search(cr, uid, [('ref', '=', number),('account_id', '=', account_id),('partner_id', '=', partner_id),('journal_id', '=', cjc_journal),('debit', '>', 0)])
+                    move_line_ids += self.pool.get("account.move.line").search(cr, uid, [('ref', '=', number),('account_id', '=', account_id),('partner_id', '=', partner_id),('journal_id', '=', inv_journal),('credit', '>', 0)])
 
                     try:
                         self.pool.get("account.move.line.reconcile").trans_rec_reconcile_full(cr, uid, ids, {"active_ids": move_line_ids})

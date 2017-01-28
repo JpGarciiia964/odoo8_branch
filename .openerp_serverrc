@@ -1,5 +1,5 @@
 [options]
-addons_path = /Users/eneldoserrata/PycharmProjects/marcos/odoo8/odoo/openerp/addons,/Users/eneldoserrata/PycharmProjects/marcos/odoo8/odoo/addons
+addons_path = /Users/eneldoserrata/PycharmProjects/odoo8_branch/odoo/openerp/addons,/Users/eneldoserrata/PycharmProjects/odoo8_branch/odoo/addons,/Users/eneldoserrata/PycharmProjects/odoo8_branch/marcos_addons,/Users/eneldoserrata/PycharmProjects/odoo8_branch/odoo_community_modules
 admin_passwd = admin
 auto_reload = False
 csv_internal_sep = ,

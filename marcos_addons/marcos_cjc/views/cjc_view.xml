@@ -57,8 +57,10 @@
 
                 <field name="amount" position="after">
                     <field name="invoice_id" invisible="1"/>
+
                     <button icon="STOCK_EDIT" name="view_invoice" string="Ver factura" type="object"
                             attrs="{'invisible': [('invoice_id','=',False)]}"/>
+                    <field name="account_id" invisible="0"/>
                 </field>
             </field>
         </record>
